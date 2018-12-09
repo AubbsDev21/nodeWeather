@@ -1,0 +1,23 @@
+{
+  "name": "node_weather",
+  "version": "1.0.0",
+  "description": "Nodejs weather app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AubbsDev21/nodeWeather.git"
+  },
+  "author": "Aubre Body",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AubbsDev21/nodeWeather/issues"
+  },
+  "homepage": "https://github.com/AubbsDev21/nodeWeather#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
