@@ -1,77 +1,82 @@
-
-<Doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Weather.me</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-	<script src="main.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<style>
+		html, body {
+			height: 100%;
+			width: 100%;
+		}
+		body {
+			background-color: rgb(125, 227, 235);
+		}
+		.city {
+			text-align: center;
+			color: rgb(125, 227, 235);
+		}
+		.temp {
+			text-align: center;
+			color: rgb(125, 227, 235);
+			font-size: 30px;
 
-	<!-- Status Bar -->
-	<div id="status">
-		<p></p>
-		<button class="close"><i class="fa fa-times" aria-hidden="true"></i></button>
-	</div>
-	<!-- Current Weather -->
-	<div id="current" class="wrapper">
-		<nav>
-			<button id="locateBtn">
-				<i class="fa fa-location-arrow" aria-hidden="true"></i>
-			</button>
-			<button id="unitBtn" data-units="f">f</button>
-		</nav>
-		<h1 class="location">Chicago, IL</h1>
-		<h2 class="date">Sunday, January 1, 2017</h2>
-		<div class="weatherIcon">
-			<div class="sunny">
-				<div class="inner"></div>
-			</div>
-		</div>
-		<p class="temp">72</p>
-		<p class="conditions">Sunny</p>
-	</div>
-	<!-- Future Forecast -->
-	<div id="future" class="wrapper">
-		<div class="container">
-			<h3 class="day">Mon</h3>
-			<div class="weatherIcon">
-				<div class="partlycloudy">
-					<div class="inner"></div>
+		}
+		.white_border {
+			border-radius: 20px;
+		}
+		.e {
+			text-align: center;
+			color: rgb(125, 227, 235);
+			font-size: 150px;
+		}
+	</style>
+  </head>
+  <body>
+   <section class="section">
+    <div class="container">
+      <div class="columns">
+		<div class="columns is-desktop">
+				<div class="column ">
+					<input class="input" type="City" placeholder="City">
+				</div>
+				<div class="column ">
+						<a class="button is-primary is-inverted">Search</a>		
 				</div>
 			</div>
-			<p class="conditions">Partly Cloudy</p>
-			<p class="tempRange"><span class="high">64</span> | <span class="low">48</span></p>
-		</div>
-		<div class="container">
-			<h3 class="day">Tue</h3>
-			<div class="weatherIcon">
-				<div class="mostlycloudy">
-					<div class="inner"></div>
-				</div>
-			</div>
-			<p class="conditions">Mostly Cloudy</p>
-			<p class="tempRange"><span class="high">57</span> | <span class="low">45</span></p>
-		</div>
-		<div class="container">
-			<h3 class="day">Wed</h3>
-			<div class="weatherIcon">
-				<div class="rain">
-					<div class="inner"></div>
-				</div>
-			</div>
-			<p class="conditions">Chance of Rain</p>
-			<p class="tempRange"><span class="high">63</span> | <span class="low">59</span></p>
-		</div>
+	  </div>
 	</div>
-	<footer>
-		<p id="lastUpdated">Last updated at 12:00pm</p>
-		<p>Created by <a href="http://tiffanydu.com/" title="Visit Portfolio Site" target="_blank">Tiffany Du</a> | Weather data from <a href="https://www.wunderground.com/" title="Wunderground.com" target="_blank">Wunderground</a></p>
-	</footer>
-	
-</body>
+  </section>
 
+  <section class="section">
+	  <div class="container">
+         
+			<div class="column is-three-fifths is-offset-one-fifth white_border " style="background-color: rgb(250, 250, 250)">
+					<br>
+					<br>
+					<h1 class="title is-3 city"> <%=weather.city %> </h1>
+					
+					<h5 class="title is-5 city"><%=weather.description %></h5>
+					
+						<figure class ="city">
+							<img src="http://openweathermap.org/img/w/<%= weather.icon%>.png">
+						</figure>
+					<br>
+					<br>
+					<strong><h1 class="e"><%= weather.temperature %>ºF</h1></strong>
+					<br>
+					<br>
+					
+					
+
+			</div>
+		 
+	  </div>
+  </section>
+  
+  </body>
+  
 </html>
+	
